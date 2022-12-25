@@ -1,10 +1,13 @@
 from django.shortcuts import render
+from .models import Team
 
 def home(request):
-    return render(request, 'pages/home.html')
+    queryset = Team.objects.all()
+    return render(request, 'pages/home.html', {'teams': list(queryset)})
 
 def about(request):
-    return render(request, 'pages/about.html')
+    queryset = Team.objects.all()
+    return render(request, 'pages/about.html', {'teams': list(queryset)})
 
 def services(request):
     return render(request, 'pages/services.html')
