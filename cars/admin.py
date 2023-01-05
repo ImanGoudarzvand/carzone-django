@@ -19,5 +19,5 @@ class CarAdmin(admin.ModelAdmin):
     thumbnail.short_description = 'photo'
     class Media:
         css = {
-            'all': ['css/thumbnail2.css']
+            'all': ['pages/css/thumbnail2.css']
         }
