@@ -9,6 +9,7 @@ psycopg2-binary = "*"
 pillow = "*"
 django-ckeditor = "*"
 django-multiselectfield = "*"
+django-allauth = "*"
 
 [dev-packages]
 
