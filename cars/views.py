@@ -62,11 +62,11 @@ def search(request):
         if data_match_body_style:
             searched_car_queryset = searched_car_queryset.filter(body_style__iexact=data_match_body_style)
 
-    # if 'min_price' and 'max_price' in request.GET:
-    data_match_min_price = request.GET['min_price']
-    data_match_max_price = request.GET['max_price']
-    if data_match_min_price and data_match_max_price:
-        searched_car_queryset = searched_car_queryset.filter(price__gt=data_match_min_price, price__lt=data_match_max_price)
+    if 'min_price' and 'max_price' in request.GET:
+        data_match_min_price = request.GET['min_price']
+        data_match_max_price = request.GET['max_price']
+        if data_match_min_price and data_match_max_price:
+            searched_car_queryset = searched_car_queryset.filter(price__gt=data_match_min_price, price__lt=data_match_max_price)
 
 
     return render(request, 'cars/search.html', {'searched_cars': list(searched_car_queryset),
