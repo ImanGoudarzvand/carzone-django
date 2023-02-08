@@ -1,10 +1,11 @@
 from django.db import models
+from cars.models import Car
 
 # Create your models here.
 class Contact(models.Model):
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
-    car_id = models.IntegerField()
+    car = models.ForeignKey(Car, on_delete=models.CASCADE, related_name='contacts')
     customer_need = models.CharField(max_length=255)
     car_title = models.CharField(max_length=255)
     city = models.CharField(max_length=255)
