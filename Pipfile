@@ -11,6 +11,8 @@ django-ckeditor = "*"
 django-multiselectfield = "*"
 django-allauth = "*"
 django-debug-toolbar = "*"
+whitenoise = "*"
+gunicorn = "*"
 
 [dev-packages]
 
