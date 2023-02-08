@@ -1,6 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Team
 from cars.models import Car
+from django.core.mail import mail_admins
+from django.contrib import messages
 
 def home(request):
     team_queryset = Team.objects.all()
@@ -29,4 +31,23 @@ def services(request):
     return render(request, 'pages/services.html')
 
 def contact(request):
+    if request.method == 'POST':
+        name = request.POST['name']
+        email = request.POST['email']
+        subject = request.POST['subject']
+        phone = request.POST['phone']
+        message = request.POST['message']
+
+        email_subject = f'you have a new message from Carzone website regarding {subject}'
+        message_body = f'Name: {name} .Email: {email} , phone: {phone} , message: {message} '
+
+        mail_admins(
+            email_subject,
+            message_body,
+            )
+
+        messages.success(request, 'Thank you for contacting us.')
+        return redirect('contact')
+
+
     return render(request, 'pages/contact.html')

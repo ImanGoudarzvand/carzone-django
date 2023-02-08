@@ -36,27 +36,20 @@
 		</tr>
 	  </thead>
 	  <tbody>
-		<tr>
-		  <th scope="row">1</th>
-		  <td>Lamborgini Huracan</td>
-		  <td>Austin</td>
-		  <td>$25000</td>
-		  <td><a href="#" class="btn btn-outline-dark">View Car</a></td>
-		</tr>
-		<tr>
-		  <th scope="row">2</th>
-		  <td>Lamborgini Huracan</td>
-		  <td>Austin</td>
-		  <td>$25000</td>
-		  <td><a href="#" class="btn btn-outline-dark">View Car</a></td>
-		</tr>
-		<tr>
-		  <th scope="row">3</th>
-		  <td>Lamborgini Huracan</td>
-		  <td>Austin</td>
-		  <td>$25000</td>
-		  <td><a href="#" class="btn btn-outline-dark">View Car</a></td>
-		</tr>
+		{% if contacts %}
+			{% for contact in contacts %}
+			<tr>
+			<th scope="row">1</th>
+			<td>{{contact.car.title}}</td>
+			<td>{{contact.city}}</td>
+			<td>${{contact.car.price}}</td>
+			<td><a href="{% url 'car_detail' contact.car.id %}" class="btn btn-outline-dark">View Car</a></td>
+
+			</tr>
+			{% endfor %}
+		{% else %}
+			<h3>You have No inquiries</h3>
+		{% endif %}
 	  </tbody>
 	</table>
 </div>
