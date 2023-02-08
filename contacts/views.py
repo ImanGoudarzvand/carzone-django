@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Contact
 from django.contrib import messages
+from django.core.mail import mail_admins
 
 # Create your views here.
 def inquiry(request):
@@ -25,6 +26,12 @@ def inquiry(request):
             contact = Contact(car_id = car_id, car_title = car_title, user_id = user_id, first_name = first_name,
             last_name = last_name, customer_need = customer_need, city = city, state = state, email = email, 
             phone = phone, message = message)
+
+            mail_admins(
+                'New Car Inquiry',
+                f'You have a new car inquiry for the car {car_title}, please log in to your admin panel for more info ',
+                
+            )
 
             contact.save()
             messages.success(request, 'Your request has been submitted, we will get to you shortly.')
