@@ -46,14 +46,21 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.facebook',
     'allauth.socialaccount.providers.google',
-
+    'debug_toolbar',
     'ckeditor',
     'pages',
     'cars',
     'accounts',
 ]
 
+INTERNAL_IPS = [
+    # ...
+    "127.0.0.1",
+    # ...
+]
+
 MIDDLEWARE = [
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -135,7 +142,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'pages/static'),
+    os.path.join(BASE_DIR, 'pages/static/'),
 ]
 
 MEDIA_URL = '/media/'
@@ -154,3 +161,17 @@ MESSAGE_TAGS = {
 }
 
 SITE_ID = 1
+
+# Email Configurations
+
+EMIAL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'localhost'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+EMAIL_PORT = 2525
+DEFAULT_FROM_EMAIL = 'from@carzone.com'
+
+
+ADMINS = [
+    ('Iman', 'admin@carzone.com')
+]
