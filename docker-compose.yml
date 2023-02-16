@@ -40,9 +40,10 @@ services:
       - 5000:80
       - 25:25
       - 143:143
-    environment:
-      - ServerOptions__HostName=smtp4dev
+    volumes:
+      - smtp4dev-data-carzone:/smtp4dev
 
 volumes:
   postgres-carzone:
   django-api-carzone:
+  smtp4dev-data-carzone:
