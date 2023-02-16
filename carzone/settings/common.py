@@ -22,6 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 
 
+ALLOWED_HOSTS = ['*']
 
 
 
@@ -149,7 +150,7 @@ SITE_ID = 1
 # Email Configurations
 
 EMIAL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'localhost'
+EMAIL_HOST = 'smtp4dev'
 EMAIL_HOST_USER = ''
 EMAIL_HOST_PASSWORD = ''
 EMAIL_PORT = 2525

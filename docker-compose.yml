@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  api:
+    depends_on:
+      - db
+    build: .
+    command: >
+      sh -c "python manage.py migrate &&
+           python manage.py runserver 0.0.0.0:8000"
+    
+    volumes:
+      - django-api-carzone:/app/db
+    ports:
+      - 8000:8000
+    environment:
+      - POSTGREG_NAME= postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      # - POSTGRES_URL=postgres://postgres:postgres@db:5432/postgres
+
+
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      
+    ports:
+      - 5434:5432
+
+    volumes:
+      - postgres-carzone:/var/lib/postgresql/data
+
+
+  smtp4dev:
+    image: rnwood/smtp4dev:v3
+    restart: always
+    ports:
+      - 5000:80
+      - 25:25
+      - 143:143
+    environment:
+      - ServerOptions__HostName=smtp4dev
+
+volumes:
+  postgres-carzone:
+  django-api-carzone:
