@@ -7,7 +7,7 @@ db.sqlite3
 media
 /static/
 *.jpeg
-dev.py
+
 
 # pipenv
 #   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
