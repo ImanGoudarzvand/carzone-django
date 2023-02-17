@@ -25,11 +25,52 @@ A Django used-car selling website
 - PostgreSQL
 - Docker
 
-## Setup
-- To run this project, you need to install the latest version of PostgreSQL first.
+## Setup Using docker
 
-https://www.postgresql.org/download/
+Make sure you have the latest version of docker and docker compose on your machine.
 
-Once you install PostgreSQL, make sure it's running.
+https://docs.docker.com/desktop/<br>
+https://docs.docker.com/compose/
 
-### Install the Dependencies
+    docker compose up -d
+"-d" is for running in detatched mode.
+
+### Populating the database:
+    docker compose run api python manage.py loaddata project_dump.json
+
+## Setup without docker
+
+#### Install the Dependencies
+First we use pipenv package to build a virtual environment for our project.
+
+    pip install pipenv
+#### To install the project dependencies:<br>
+    pipenv install
+#### To go to the virtual environment
+    pipenv shell
+Here we need to configure our <b>dev module</b> in settings folder to work outside the docker container:
+
+    DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'YOUR_DATABASE_NAME_HERE',
+        'USER': 'YOUR_DATABASE_USER_HERE',
+        'PASSWORD': 'YOUR_DATABASE_PASSWORD_HERE',
+        'HOST': 'localhost',
+                }
+    }
+    
+In <b>common module</b> in settings folder:
+
+    EMAIL_HOST = 'localhost'
+    EMAIL_PORT = 2525
+    
+    
+    ALLOWED_HOSTS = []
+
+#### Start the Server
+    python manage.py runserver
+If the porn is already taken try using another port
+
+#### Populating the database
+    python manage.py loaddata project_dump.json
