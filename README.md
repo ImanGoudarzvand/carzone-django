@@ -21,6 +21,7 @@ A Django used-car selling website
 - HTML5
 - CSS3
 - CKEditor
+- smtp
 - PostgreSQL
 - Docker
 
