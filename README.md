@@ -69,8 +69,12 @@ In <b>common module</b> in settings folder:
     ALLOWED_HOSTS = []
 
 #### Start the Server
+
+###### Build the database
+    python manage.py migrate
+###### Run the server
     python manage.py runserver
-If the porn is already taken try using another port
+If the port is already taken try using another port
 
 #### Populating the database
     python manage.py loaddata project_dump.json
