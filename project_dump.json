@@ -16,40 +16,7 @@
         "user_permissions": []
     }
 },
-{
-    "model": "auth.user",
-    "fields": {
-        "password": "pbkdf2_sha256$390000$8C7HC4X5Uo3E5HLXpHrt6F$OypVJSpxFdAHiHp7qxpQ8J3hdOwolLQ0AogZkAgCSC8=",
-        "last_login": "2023-01-30T18:56:49.674Z",
-        "is_superuser": false,
-        "username": "g",
-        "first_name": "im",
-        "last_name": "sd",
-        "email": "im.goudarz@gmail.com",
-        "is_staff": false,
-        "is_active": true,
-        "date_joined": "2023-01-30T18:56:49.417Z",
-        "groups": [],
-        "user_permissions": []
-    }
-},
-{
-    "model": "auth.user",
-    "fields": {
-        "password": "pbkdf2_sha256$390000$tH8TjGD2AdLL9O4PaaC2rP$lsyimOIDb0ITIj7wJpo1JwD3wVelwoJBg6PXzj7wATs=",
-        "last_login": "2023-02-05T15:10:49.055Z",
-        "is_superuser": false,
-        "username": "a",
-        "first_name": "im",
-        "last_name": "sd",
-        "email": "c5604aef9a@boxomail.live",
-        "is_staff": false,
-        "is_active": true,
-        "date_joined": "2023-01-30T19:19:25.431Z",
-        "groups": [],
-        "user_permissions": []
-    }
-},
+
 {
     "model": "sessions.session",
     "pk": "bvk0k47ssu36j5q6xe9b7i6xwvnz3tv4",
@@ -65,96 +32,7 @@
         "name": "example.com"
     }
 },
-{
-    "model": "contacts.contact",
-    "pk": 2,
-    "fields": {
-        "first_name": "Maryam",
-        "last_name": "Shafagh",
-        "car": 3,
-        "customer_need": "I'd like to test drive this",
-        "car_title": "2017 Ford F-250 Super Duty",
-        "city": "totonto",
-        "state": "Ontario",
-        "email": "b5bb697def@boxomail.live",
-        "phone": "123",
-        "message": "Please fuck me in ontario",
-        "user_id": 0,
-        "create_date": "2023-01-31T14:22:32.507Z"
-    }
-},
-{
-    "model": "contacts.contact",
-    "pk": 3,
-    "fields": {
-        "first_name": "im",
-        "last_name": "sd",
-        "car": 3,
-        "customer_need": "I'm interested in this",
-        "car_title": "2017 Ford F-250 Super Duty",
-        "city": "totonto",
-        "state": "Ontario",
-        "email": "c5604aef9a@boxomail.live",
-        "phone": "",
-        "message": "",
-        "user_id": 3,
-        "create_date": "2023-01-31T14:51:44.018Z"
-    }
-},
-{
-    "model": "contacts.contact",
-    "pk": 4,
-    "fields": {
-        "first_name": "b",
-        "last_name": "b",
-        "car": 4,
-        "customer_need": "I'm interested in this",
-        "car_title": "2017 Jaguar F-PACE",
-        "city": "Dallas",
-        "state": "Ontario",
-        "email": "admin@gmail.com",
-        "phone": "",
-        "message": "",
-        "user_id": 1,
-        "create_date": "2023-01-31T14:55:41.730Z"
-    }
-},
-{
-    "model": "contacts.contact",
-    "pk": 5,
-    "fields": {
-        "first_name": "im",
-        "last_name": "sd",
-        "car": 4,
-        "customer_need": "I'm interested in this",
-        "car_title": "2017 Jaguar F-PACE",
-        "city": "Austin",
-        "state": "Ontario",
-        "email": "c5604aef9a@boxomail.live",
-        "phone": "",
-        "message": "",
-        "user_id": 3,
-        "create_date": "2023-01-31T16:55:18.415Z"
-    }
-},
-{
-    "model": "contacts.contact",
-    "pk": 7,
-    "fields": {
-        "first_name": "im",
-        "last_name": "sd",
-        "car": 2,
-        "customer_need": "I'm interested in this",
-        "car_title": "2017 Ford Edge",
-        "city": "Tehran",
-        "state": "Tehran",
-        "email": "c5604aef9a@boxomail.live",
-        "phone": "",
-        "message": "",
-        "user_id": 3,
-        "create_date": "2023-02-05T15:14:57.605Z"
-    }
-},
+
 {
     "model": "pages.team",
     "pk": 2,
